@@ -1,0 +1,207 @@
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Diwali, Anurupa!</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <main>
+
+    <!-- PAGE 1: WELCOME -->
+    <section class="page active" id="welcome">
+      <div class="welcome-content">
+        <div class="diya">
+          <div class="flame"></div>
+          <div class="diya-top"></div>
+          <div class="diya-bowl"></div>
+          <div class="diya-glow"></div>
+        </div>
+
+        <h1 class="main-title">Happy Diwali</h1>
+        <p class="subtitle">A little light, a little happiness, and a special surprise...</p>
+        <p class="from">A special wish for Anurupa ✨</p>
+
+        <button class="gold-btn" onclick="goTo('wishes')">Begin Your Surprise →</button>
+      </div>
+    </section>
+
+    <!-- PAGE 2: WISHES -->
+    <section class="page" id="wishes">
+      <div class="content-card">
+        <span class="small-label">A WISH FROM THE HEART</span>
+        <h2>For You, Anurupa</h2>
+
+        <p>
+          May this Diwali fill your life with endless happiness,
+          beautiful moments and countless reasons to smile.
+        </p>
+
+        <p>
+          May every dream you carry in your heart find its way
+          towards reality. May success follow your hard work,
+          and may peace and good health always stay beside you.
+        </p>
+
+        <p>
+          Keep shining, keep believing in yourself, and never
+          stop chasing the beautiful future you deserve.
+        </p>
+
+        <p class="highlight-text">May your world always be filled with light. ✨</p>
+
+        <button class="gold-btn" onclick="goTo('prayer')">A Prayer for Us →</button>
+      </div>
+    </section>
+
+    <!-- PAGE 3: PRAYER -->
+    <section class="page" id="prayer">
+      <div class="content-card">
+        <span class="small-label">A LITTLE PRAYER</span>
+        <h2>For Both of Us</h2>
+
+        <p>
+          May this festival bring more trust, understanding
+          and respect into our lives.
+        </p>
+
+        <p>
+          May we always support each other's dreams,
+          celebrate each other's happiness and face
+          every challenge with patience.
+        </p>
+
+        <p>
+          May our bond grow stronger with time,
+          filled with honesty, care and beautiful memories.
+        </p>
+
+        <p class="highlight-text">
+          May the light of Diwali guide us towards
+          a brighter tomorrow. 🪔
+        </p>
+
+        <button class="gold-btn" onclick="goTo('family')">For Our Families →</button>
+      </div>
+    </section>
+
+    <!-- PAGE 4: FAMILY -->
+    <section class="page" id="family">
+      <div class="content-card">
+        <span class="small-label">WITH RESPECT AND LOVE</span>
+        <h2>For Our Families</h2>
+
+        <p>
+          Warm Diwali wishes, heartfelt pranam and lots of
+          respect to both our families.
+        </p>
+
+        <p>
+          May every home be filled with peace, good health,
+          prosperity and togetherness.
+        </p>
+
+        <p>
+          Special pranam and respect to our parents and
+          the people who guide us like second parents.
+        </p>
+
+        <p class="highlight-text">
+          May every family member always stay happy and blessed. ❤️
+        </p>
+
+        <button class="gold-btn" onclick="goTo('gifts')">Open Your Gifts →</button>
+      </div>
+    </section>
+
+    <!-- PAGE 5: GIFTS -->
+    <section class="page" id="gifts">
+      <div class="content-card gift-card">
+        <span class="small-label">A LITTLE DIWALI SURPRISE</span>
+        <h2>Two Little Gifts For You</h2>
+        <p>Tap each gift box to open your surprise!</p>
+
+        <div class="gift-container">
+
+          <div class="gift-item">
+            <div class="gift-box" id="giftChocolate" onclick="openGift('chocolate')">
+              <div class="gift-lid"></div>
+              <div class="gift-ribbon"></div>
+              <div class="gift-bow"></div>
+              <div class="gift-body"></div>
+            </div>
+            <p>Open your surprise</p>
+            <div class="gift-reveal" id="chocolateReveal">
+              <div class="big-chocolate">🍫 🍫</div>
+              <span>A sweet little treat!</span>
+            </div>
+          </div>
+
+          <div class="gift-item">
+            <div class="gift-box" id="giftLaddoo" onclick="openGift('laddoo')">
+              <div class="gift-lid"></div>
+              <div class="gift-ribbon"></div>
+              <div class="gift-bow"></div>
+              <div class="gift-body"></div>
+            </div>
+            <p>Open your surprise</p>
+            <div class="gift-reveal" id="laddooReveal">
+              <div class="big-laddoo">🟠 🟠 🟠</div>
+              <span>Some festive sweetness!</span>
+            </div>
+          </div>
+
+        </div>
+
+        <button class="gold-btn" onclick="goTo('celebration')">Final Celebration →</button>
+      </div>
+    </section>
+
+    <!-- PAGE 6: CELEBRATION -->
+    <section class="page celebration-page" id="celebration">
+      <canvas id="fireworksCanvas"></canvas>
+
+      <div class="celebration-content">
+        <span class="small-label">LET THE LIGHTS SHINE</span>
+        <h2>Celebrate Us!</h2>
+        <p>Two names, countless wishes, and a sky full of lights.</p>
+
+        <div class="balloon-area">
+
+          <div class="heart-balloon balloon-one">
+            <svg viewBox="0 0 120 120" class="heart-svg">
+              <path d="M60 105 C45 88 5 62 8 35 C11 8 43 5 60 31 C77 5 109 8 112 35 C115 62 75 88 60 105Z"/>
+            </svg>
+            <span>Anurupa</span>
+            <div class="balloon-string"></div>
+          </div>
+
+          <div class="heart-balloon balloon-two">
+            <svg viewBox="0 0 120 120" class="heart-svg">
+              <path d="M60 105 C45 88 5 62 8 35 C11 8 43 5 60 31 C77 5 109 8 112 35 C115 62 75 88 60 105Z"/>
+            </svg>
+            <span>Paritosh</span>
+            <div class="balloon-string"></div>
+          </div>
+
+        </div>
+
+        <p class="final-message">May every Diwali bring brighter days and beautiful memories.</p>
+
+        <button class="gold-btn celebrate-btn" onclick="celebrate()">🎆 Celebrate Us 🎆</button>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

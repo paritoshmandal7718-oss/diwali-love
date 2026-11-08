@@ -1,0 +1,458 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --gold: #ffd477;
+  --deep: #10091d;
+  --cream: #fff4dc;
+}
+
+body {
+  min-height: 100vh;
+  font-family: 'Poppins', sans-serif;
+  background: var(--deep);
+  color: var(--cream);
+  overflow-x: hidden;
+}
+
+.page {
+  display: none;
+  min-height: 100vh;
+  width: 100%;
+  padding: 35px 20px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 50% 40%, rgba(124, 61, 91, .3), transparent 45%),
+    linear-gradient(135deg, #10091d, #28102c, #130b20);
+}
+
+.page.active {
+  display: flex;
+  animation: pageFade 1s ease;
+}
+
+@keyframes pageFade {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.welcome-content,
+.content-card,
+.celebration-content {
+  width: min(100%, 760px);
+  position: relative;
+  z-index: 3;
+}
+
+.main-title,
+.content-card h2,
+.celebration-content h2 {
+  font-family: 'Playfair Display', serif;
+  color: var(--gold);
+  text-shadow: 0 0 25px rgba(255, 190, 80, .3);
+}
+
+.main-title {
+  font-size: clamp(42px, 8vw, 76px);
+  margin: 35px 0 12px;
+}
+
+.subtitle {
+  color: #f6dfc0;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.from {
+  margin: 15px 0 30px;
+  color: #ffcc83;
+  letter-spacing: 1px;
+}
+
+/* DIYA */
+
+.diya {
+  width: 150px;
+  height: 150px;
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.diya-glow {
+  position: absolute;
+  width: 170px;
+  height: 170px;
+  background: rgba(255, 149, 32, .18);
+  border-radius: 50%;
+  filter: blur(35px);
+  animation: glowPulse 2s infinite alternate;
+}
+
+.flame {
+  position: absolute;
+  width: 28px;
+  height: 52px;
+  top: 18px;
+  z-index: 3;
+  background: linear-gradient(to top, #ff5b00, #ffdc42, #fff8c9);
+  border-radius: 50% 50% 45% 45%;
+  transform-origin: bottom center;
+  animation: flameMove .8s infinite alternate;
+  box-shadow: 0 0 25px #ff9d28;
+}
+
+.diya-top {
+  position: absolute;
+  width: 110px;
+  height: 25px;
+  top: 75px;
+  border-radius: 50%;
+  background: linear-gradient(#ffcf72, #a64c16);
+  z-index: 2;
+}
+
+.diya-bowl {
+  position: absolute;
+  width: 100px;
+  height: 48px;
+  top: 83px;
+  background: linear-gradient(135deg, #ffb13b, #a53e13);
+  border-radius: 10px 10px 50px 50px;
+  box-shadow: 0 8px 25px rgba(255, 128, 20, .3);
+}
+
+@keyframes flameMove {
+  from { transform: rotate(-5deg) scaleY(.95); }
+  to { transform: rotate(5deg) scaleY(1.08); }
+}
+
+@keyframes glowPulse {
+  from { opacity: .5; transform: scale(.9); }
+  to { opacity: 1; transform: scale(1.1); }
+}
+
+/* CONTENT CARDS */
+
+.content-card {
+  padding: 45px 35px;
+  border: 1px solid rgba(255, 210, 130, .35);
+  border-radius: 25px;
+  background: rgba(255, 255, 255, .055);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 20px 70px rgba(0, 0, 0, .25);
+}
+
+.small-label {
+  display: block;
+  color: #ffbd69;
+  font-size: 11px;
+  letter-spacing: 3px;
+  margin-bottom: 18px;
+}
+
+.content-card h2,
+.celebration-content h2 {
+  font-size: clamp(32px, 6vw, 48px);
+  margin-bottom: 25px;
+}
+
+.content-card p {
+  color: #f6e8d4;
+  line-height: 2;
+  font-size: 15px;
+  margin: 16px 0;
+}
+
+.highlight-text {
+  color: var(--gold) !important;
+  font-weight: 500;
+}
+
+/* BUTTON */
+
+.gold-btn {
+  margin-top: 25px;
+  border: 0;
+  padding: 14px 28px;
+  border-radius: 50px;
+  background: linear-gradient(135deg, #ffe6a5, #e9a83f);
+  color: #351321;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 8px 25px rgba(255, 174, 55, .2);
+  transition: .3s ease;
+}
+
+.gold-btn:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 12px 35px rgba(255, 174, 55, .4);
+}
+
+/* GIFTS */
+
+.gift-container {
+  display: flex;
+  justify-content: center;
+  gap: 65px;
+  flex-wrap: wrap;
+  margin: 35px 0 10px;
+}
+
+.gift-item {
+  width: 180px;
+  min-height: 230px;
+}
+
+.gift-item > p {
+  font-size: 13px;
+  color: var(--gold);
+  margin-top: 18px;
+}
+
+.gift-box {
+  width: 130px;
+  height: 115px;
+  position: relative;
+  margin: 20px auto 0;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.gift-body {
+  position: absolute;
+  bottom: 0;
+  width: 130px;
+  height: 85px;
+  background: linear-gradient(135deg, #d52d43, #8b102b);
+  border: 2px solid #ffca73;
+  border-radius: 5px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, .3);
+}
+
+.gift-ribbon {
+  position: absolute;
+  z-index: 2;
+  left: 53px;
+  bottom: 0;
+  height: 85px;
+  width: 25px;
+  background: #ffdc85;
+}
+
+.gift-lid {
+  position: absolute;
+  z-index: 4;
+  width: 145px;
+  height: 28px;
+  left: -7px;
+  top: 5px;
+  background: linear-gradient(135deg, #ffdb84, #d78c27);
+  border: 2px solid #ffe3a1;
+  border-radius: 5px;
+  transform-origin: left bottom;
+  transition: transform .7s ease;
+}
+
+.gift-bow {
+  position: absolute;
+  z-index: 5;
+  width: 38px;
+  height: 20px;
+  top: -10px;
+  left: 46px;
+  border: 6px solid #ffe6a3;
+  border-radius: 50%;
+}
+
+.gift-box.open .gift-lid {
+  transform: translate(-30px, -55px) rotate(-35deg);
+}
+
+.gift-box.open .gift-bow {
+  transform: translate(-25px, -45px) rotate(-35deg);
+  transition: .7s;
+}
+
+.gift-reveal {
+  opacity: 0;
+  transform: translateY(25px) scale(.5);
+  transition: .7s ease;
+  pointer-events: none;
+  color: var(--gold);
+}
+
+.gift-reveal.show {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.big-chocolate,
+.big-laddoo {
+  font-size: 42px;
+  margin: 10px 0;
+  animation: giftPop .8s ease both;
+}
+
+.gift-reveal span {
+  display: block;
+  font-size: 12px;
+}
+
+@keyframes giftPop {
+  0% { transform: translateY(35px) scale(.3); }
+  70% { transform: translateY(-12px) scale(1.25); }
+  100% { transform: translateY(0) scale(1); }
+}
+
+/* CELEBRATION */
+
+.celebration-page {
+  background:
+    radial-gradient(circle at center, #351333, #10091d 75%);
+}
+
+#fireworksCanvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.celebration-content {
+  z-index: 2;
+}
+
+.celebration-content > p {
+  color: #f5dfc5;
+  line-height: 1.8;
+  font-size: 14px;
+}
+
+.balloon-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(20px, 8vw, 90px);
+  margin: 35px auto 20px;
+  min-height: 200px;
+}
+
+.heart-balloon {
+  width: 145px;
+  height: 165px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: floatBalloon 3s ease-in-out infinite;
+}
+
+.balloon-two {
+  animation-delay: 1s;
+}
+
+.heart-svg {
+  width: 145px;
+  height: 145px;
+  position: absolute;
+  overflow: visible;
+  filter: drop-shadow(0 0 18px rgba(255, 100, 150, .4));
+}
+
+.balloon-one .heart-svg path {
+  fill: #ed497a;
+  stroke: #ffb1c7;
+  stroke-width: 2;
+}
+
+.balloon-two .heart-svg path {
+  fill: #a94be9;
+  stroke: #e1b5ff;
+  stroke-width: 2;
+}
+
+.heart-balloon span {
+  position: relative;
+  z-index: 2;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, .5);
+  margin-top: -5px;
+}
+
+.balloon-string {
+  position: absolute;
+  height: 48px;
+  width: 1px;
+  background: rgba(255, 255, 255, .6);
+  bottom: -28px;
+}
+
+@keyframes floatBalloon {
+  0%, 100% { transform: translateY(0) rotate(-2deg); }
+  50% { transform: translateY(-15px) rotate(2deg); }
+}
+
+.final-message {
+  margin-top: 25px;
+  color: #ffdda5 !important;
+}
+
+.celebrate-btn {
+  position: relative;
+  z-index: 5;
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+  .content-card {
+    padding: 35px 22px;
+  }
+
+  .content-card p {
+    font-size: 13px;
+    line-height: 1.9;
+  }
+
+  .gift-container {
+    gap: 25px;
+  }
+
+  .gift-item {
+    width: 135px;
+  }
+
+  .heart-balloon {
+    width: 120px;
+    height: 145px;
+  }
+
+  .heart-svg {
+    width: 120px;
+    height: 120px;
+  }
+
+  .heart-balloon span {
+    font-size: 12px;
+  }
+
+  .balloon-area {
+    gap: 12px;
+  }
+}
